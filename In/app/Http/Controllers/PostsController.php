@@ -47,6 +47,11 @@ class PostsController extends Controller
     }
 
     public function show(\App\Post $post){
-        return view('posts.show', compact('post'));
+        $follows = (auth()->user() ? auth()->user()->following->contains($post->user_id) : false);
+        $likes = (auth()->user() ? auth()->user()->likes->contains($post->id) : false);
+        $liked = ($post->likedBy()->count());
+
+
+        return view('posts.show', compact('post','follows','likes','liked'));
     }
 }

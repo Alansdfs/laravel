@@ -20,6 +20,9 @@ Route::get('/email',function(){
 
 Route::post('follow/{user}','FollowsController@store');
 
+Route::post('like/{post}','LikeController@store');
+
+
 
 Route::get('/p/create','PostsController@create');
 Route::get('/p/{post}','PostsController@show');

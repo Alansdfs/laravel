@@ -8,7 +8,6 @@
                 <div class="col-7">
                         <img class="w-100" src="/storage/{{$post->image}}">
                 </div>
-
                 <div class="col-5">
                     <div class = "d-flex align-items-center pt-3 pb-1" style="border-bottom-style: solid;border-bottom-color: gray; border-width: 1px;">
                         <div class = "pr-3">
@@ -21,6 +20,9 @@
                                 </strong>
                             </span>
                         </a>
+                        <div id="app">
+                            <follow-button user-id="{{$post->user->id}}" follows="{{$follows}}"></follow-button>
+                        </div>
                     </div>
                     <div class="pt-3">
                         <p>
@@ -36,6 +38,15 @@
                         <p>
                             Hace 6 horas
                         </p>
+                        <p>
+                            <strong>
+                                {{$liked}} likes
+                            </strong>
+                        </p>
+
+                        <div id="app">
+                            <like-button post-id="{{$post->id}}" follows="{{$likes}}"></like-button>
+                        </div>
                 </div>
             </div>    
         </div>

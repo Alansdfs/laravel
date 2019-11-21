@@ -13,7 +13,7 @@
                         <h1>{{$user->name}}</h1>
                     </div>
                     <div id="app">
-                        <example-component user-id="{{$user->id}}" follows="{{$follows}}"></example-component>
+                        <follow-button user-id="{{$user->id}}" follows="{{$follows}}"></follow-component>
                     </div>
                 </div>
                 @can('update',$user->profile)

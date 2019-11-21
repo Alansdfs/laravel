@@ -49,18 +49,14 @@
 
 
         @endforeach
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                {{$posts->links()}}
-            </div>
-        </div>
+
 
         <div class="pt-3 col-3 offset-7" style="position:fixed">
             <div class = "d-flex align-items-center pt-3 pb-2">
                 <div class = "pr-3 pl-3">
                     <img width="45px" src="{{auth()->user()->profile->profileImage($this)}}" class="rounded-circle">
                 </div>
-                <a href="/profile/{{$post->user->id}}">
+                <a href="/profile/{{auth()->user()->id}}">
                     <span class="text-dark">
                         <strong> 
                             {{auth()->user()->name}}
@@ -84,7 +80,7 @@
                                 <a href="/profile/{{$user->id}}">
                                     <span class="text-dark">
                                         <strong> 
-                                            {{auth()->user()->name}}
+                                            {{$user->name}}
                                         </strong>
                                     </span>
                                 </a>
@@ -99,6 +95,11 @@
             </div>
         </div>
         
+        <div class="col-7 offset-1">
+            <div class="col-12 d-flex justify-content-center">
+                {{$posts->links()}}
+            </div>
+        </div>
 
     </div>
 </div>
